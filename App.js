@@ -1,35 +1,32 @@
+import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ImageBackground, Button } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet, Text, View, Image, ImageBackground, Button, TouchableOpacity } from 'react-native';
+import HomePage from './Home';
+import DonatePage from './Donate';
+import LearnPage from './Learn';
+import AdoptPage from './Adopt';
 
+const Stack = createNativeStackNavigator();
 
-function HomePage () {
-  const backgroundImage = require('./assets/pigHome.jpeg');
-  return (
-    <ImageBackground source={backgroundImage} style={background.container}></ImageBackground>
-  );
-}
 export default function App() {
   return (
     <View style={styles.container}>
-      <HomePage />
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomePage} options={{ headerShown: false }} />
+        <Stack.Screen name="Donate" component={DonatePage} options={{ headerShown: false }} />
+        <Stack.Screen name="Learn" component={LearnPage}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Adopt" component={AdoptPage}  options={{ headerShown: false }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({ 
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-const background = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    width: '100%',
-    height: '100%',
+    flex: 1, 
   },
 });
