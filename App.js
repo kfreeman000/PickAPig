@@ -7,6 +7,7 @@ import HomePage from './Home';
 import DonatePage from './Donate';
 import LearnPage from './Learn';
 import AdoptPage from './Adopt';
+import SignIn from './Account';
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,7 @@ export default function App() {
         <Stack.Screen name="Donate" component={DonatePage} options={{ headerShown: false }} />
         <Stack.Screen name="Learn" component={LearnPage}  options={{ headerShown: false }}/>
         <Stack.Screen name="Adopt" component={AdoptPage}  options={{ headerShown: false }}/>
+        <Stack.Screen name="Sign In" component={SignIn} options={{ headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
     </View>

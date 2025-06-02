@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
 function Adopt() {
+
+  const navigation = useNavigation();  
    return (
     <View style={styles.container}>
       <Text>Adopt</Text>

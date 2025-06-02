@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function Donate() {
+function Donate() {
+
+  const navigation = useNavigation();  
    return (
     <View style={styles.container}>
       <Text>Donate</Text>
     </View>
   );
 }
+
+export default Donate;
 
 const styles = StyleSheet.create({
   container: {

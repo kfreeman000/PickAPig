@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, ImageBackground, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 function HomePage () {
@@ -15,6 +15,12 @@ function HomePage () {
     source={backgroundImage} 
     style={styles.background}
     imageStyle={styles.image}>
+
+      <TouchableOpacity 
+        style={buttonStyles.buttons}
+        onPress={ () => navigation.navigate('Sign In')}>     
+        <Text style={buttonStyles.text}>Account</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity 
         style={buttonStyles.buttons}
