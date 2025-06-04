@@ -13,9 +13,11 @@ function createAcc () {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [why, setWhy] = useState('');
+  const theIm = require('./assets/backBut.jpeg');
 
   const makeAcc = () => {
     //send to database perhaps
+    // then make logic for if person already has an account
     Alert.alert("account created! woooo")
   }
 
@@ -52,6 +54,14 @@ function createAcc () {
         <Text style={buttonStyles.text}>
           Submit
         </Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity
+        style={styles.back}
+        onPress={ () => navigation.navigate('Home')}>
+        <Image>
+          
+        </Image>
     </TouchableOpacity>
 
   </View>
