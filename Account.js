@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, TextInput, Alert} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import HomePage from './Home';
 
 
-function createAcc () {
+function CreateAcc () {
 
   const navigation = useNavigation();
   const [userName, setUserName] = useState('');
@@ -16,6 +17,7 @@ function createAcc () {
     //send to database perhaps
     // then make logic for if person already has an account
     Alert.alert("account created! woooo")
+    navigation.navigate("Home")
   }
 
   return (
@@ -65,7 +67,7 @@ function createAcc () {
 )}
 
 
-export default createAcc;
+export default CreateAcc;
 
 const styles = StyleSheet.create({
   container: {

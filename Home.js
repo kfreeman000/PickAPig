@@ -1,21 +1,30 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { Video } from 'expo-av';
 
 function HomePage () {
 
   const navigation = useNavigation();  
-  const backgroundImage = require('./assets/pigHome.jpeg');
+  const background = require('./assets/homePage.mp4');
   
 
   return (
   <View style={styles.container}>
 
-    <ImageBackground 
-    source={backgroundImage} 
-    style={styles.background}
-    imageStyle={styles.image}>
-
+    <Video
+        source={background} 
+        style={{
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+      }}
+        shouldPlay
+        isLooping
+        isMuted
+        resizeMode="cover"
+    />
+    <View style={buttonStyles.container}>
       <TouchableOpacity 
         style={buttonStyles.buttons}
         onPress={ () => navigation.navigate('Sign In')}>     
@@ -39,8 +48,7 @@ function HomePage () {
         onPress={ () => navigation.navigate('Donate')}> 
         <Text style={buttonStyles.text}>Donate</Text>
       </TouchableOpacity>
-
-    </ImageBackground>
+    </View>  
   </View>
   );
 }
@@ -50,26 +58,25 @@ export default HomePage;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
+    
   },
   background: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  image: {
-    resizeMode: 'cover',
-    width: '100%',
-    height: '100%',
-  },
 });
 
 const buttonStyles = StyleSheet.create({
+  container: {
+    marginTop: 200,
+  },
   buttons: {
-    backgroundColor: 'pink',
     alignItems: 'center',
     margin: 30,
   },
   text: {
+    color: "white",
     fontSize: 30,
     fontWeight: 'bold',
     fontFamily: 'American Typewriter'

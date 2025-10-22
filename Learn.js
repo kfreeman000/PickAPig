@@ -6,15 +6,11 @@ import { useNavigation } from '@react-navigation/native';
 function Learn () {
 
    const navigation = useNavigation();  
-   const backgroundImage = require('./assets/fourPigs.jpeg');
+   //const backgroundImage = require('./assets/fourPigs.jpeg');
 
    return (
     <View style={styles.container}>
-      <ImageBackground
-        source={backgroundImage}
-        style={styles.image}>
-      </ImageBackground>
-      <Text>Learn</Text>
+      <Text style={styles.header}>Learn</Text>
     </View>
   );
 }
@@ -24,9 +20,17 @@ export default Learn;
 const styles = StyleSheet.create({
   container: {
     flex: 1, 
-    justifyContent: 'center',
-    alignItems: 'center',
   },
+
+  header: {
+    textAlign: "center",
+    padding: 100,
+    fontSize: 30,
+    fontWeight: 'bold',
+    fontFamily: 'American Typewriter',
+
+  },
+
   background: {
     flex: 1,
     alignItems: 'center',

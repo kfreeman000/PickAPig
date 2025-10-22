@@ -8,7 +8,7 @@ function Donate() {
   const navigation = useNavigation();  
    return (
     <View style={styles.container}>
-      <Text>Donate</Text>
+      <Text style={styles.header}>Donate</Text>
     </View>
   );
 }
@@ -19,11 +19,22 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, 
   },
+
+  header: {
+    textAlign: "center",
+    padding: 100,
+    fontSize: 30,
+    fontWeight: 'bold',
+    fontFamily: 'American Typewriter',
+
+  },
+
   background: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
+
   image: {
     resizeMode: 'cover',
     width: '100%',
