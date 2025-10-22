@@ -3,9 +3,6 @@ import { StyleSheet, Text, View, Image, ImageBackground, TouchableOpacity, TextI
 import { useNavigation } from '@react-navigation/native';
 
 
-
-
-
 function createAcc () {
 
   const navigation = useNavigation();
@@ -13,7 +10,7 @@ function createAcc () {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [why, setWhy] = useState('');
-  const theIm = require('./assets/backBut.jpeg');
+  //const theIm = require('./assets/backBut.jpeg');
 
   const makeAcc = () => {
     //send to database perhaps
@@ -60,7 +57,7 @@ function createAcc () {
         style={styles.back}
         onPress={ () => navigation.navigate('Home')}>
         <Image>
-          
+
         </Image>
     </TouchableOpacity>
 
